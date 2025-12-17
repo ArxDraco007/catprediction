@@ -178,7 +178,7 @@ test_x_flatten = test_x_orig.reshape(test_x_orig.shape[0], -1).T
 
 train_x = train_x_flatten / 255.
 test_x = test_x_flatten / 255.
-layers_dims = [12288, 50, 50, 50, 1]
+layers_dims = [12288, 20, 7, 5, 1]
 parameters = L_layer_model(train_x, train_y, layers_dims, num_iterations=2500, print_cost=True)
 def predict(X, y, parameters):
     m = X.shape[1]
@@ -198,3 +198,4 @@ def predict(X, y, parameters):
     return p
 pred_train = predict(train_x, train_y, parameters)
 pred_test = predict(test_x, test_y, parameters)
+
